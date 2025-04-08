@@ -1,0 +1,2824 @@
+{
+	"info": {
+		"_postman_id": "90f8b07f-1503-4440-9581-e4fa04b9892f",
+		"name": "GITHUB Public API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24695592",
+		"_collection_link": "https://universal-equinox-751375.postman.co/workspace/API-Testing-Practice-work-space~bc77a0e3-cd24-4b9b-8cb1-1090d44fd756/collection/24695592-90f8b07f-1503-4440-9581-e4fa04b9892f?action=share&source=collection_link&creator=24695592"
+	},
+	"item": [
+		{
+			"name": "Cats Facts API",
+			"item": [
+				{
+					"name": "Base Url :https://cat-fact.herokuapp.com",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify the unauthorized statuscode 401\",function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cat-fact.herokuapp.com",
+							"protocol": "https",
+							"host": [
+								"cat-fact",
+								"herokuapp",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get some facts Retrieve one or more Facts.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify the status code 200\",function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cat-fact.herokuapp.com/facts/random",
+							"protocol": "https",
+							"host": [
+								"cat-fact",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"facts",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get some facts Retrieve one or more Facts. Type of animal the fact will describe.Number of Facts to retrieve. If set to one, response will be a fact object. If many, response will be an array of Facts.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify the status code 200\",function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=100",
+							"protocol": "https",
+							"host": [
+								"cat-fact",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"facts",
+								"random"
+							],
+							"query": [
+								{
+									"key": "animal_type",
+									"value": "cat"
+								},
+								{
+									"key": "amount",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get some facts Retrieve one or more Facts. limit wille be more",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify the status code 405\",function(){\r",
+									"    pm.response.to.have.status(405)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=501",
+							"protocol": "https",
+							"host": [
+								"cat-fact",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"facts",
+								"random"
+							],
+							"query": [
+								{
+									"key": "animal_type",
+									"value": "cat"
+								},
+								{
+									"key": "amount",
+									"value": "501"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get fact by its ID Retrieve fact by its ID.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cat-fact.herokuapp.com/facts/:factID",
+							"protocol": "https",
+							"host": [
+								"cat-fact",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"facts",
+								":factID"
+							],
+							"variable": [
+								{
+									"key": "factID",
+									"value": "591f98803b90f7150a19c229"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cataas",
+			"item": [
+				{
+					"name": "Basic",
+					"item": [
+						{
+							"name": "This server could not verify that you are authorized to access the document requested. Either you supplied the wrong credentials (e.g., bad password), or your browser doesn't understand how to supply.the credentials required.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the unauthorized statuscode 401\",function(){\r",
+											"    pm.response.to.have.status(401)\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "baskaran",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://www.adoptapet.com/public/apis/pet_list.html",
+									"protocol": "https",
+									"host": [
+										"www",
+										"adoptapet",
+										"com"
+									],
+									"path": [
+										"public",
+										"apis",
+										"pet_list.html"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Return all the cat tag",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://cataas.com/api/tags",
+									"protocol": "https",
+									"host": [
+										"cataas",
+										"com"
+									],
+									"path": [
+										"api",
+										"tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Count how many cat",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Count is 1987\", function () {\r",
+											"    var jsonData = pm.response.json(); // Parse JSON response\r",
+											"    pm.expect(jsonData.count).to.equal(1987); // Check if count is 1987\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://cataas.com/api/count",
+									"protocol": "https",
+									"host": [
+										"cataas",
+										"com"
+									],
+									"path": [
+										"api",
+										"count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get random cat by tag saying text",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.response.to.have.responseTime.lessThan(30000);\r",
+											"});\r",
+											"// Check if the status code is 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is image/jpeg\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\", \"image/jpeg\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"// Check if the response body is not empty\r",
+											"pm.test(\"Response body is not empty\", function () {\r",
+											"    pm.response.to.have.body();\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response size is below 100 KB\", function () {\r",
+											"    pm.expect(pm.response.responseSize).to.be.below(1000000); // 100 KB = 100,000 bytes\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "image/*"
+									}
+								],
+								"url": {
+									"raw": "https://cataas.com/cat/sssssss/says/hello?position=center&font=Impact&fontSize=50&fontColor=%23fff&fontBackground=none",
+									"protocol": "https",
+									"host": [
+										"cataas",
+										"com"
+									],
+									"path": [
+										"cat",
+										"sssssss",
+										"says",
+										"hello"
+									],
+									"query": [
+										{
+											"key": "position",
+											"value": "center"
+										},
+										{
+											"key": "font",
+											"value": "Impact"
+										},
+										{
+											"key": "fontSize",
+											"value": "50"
+										},
+										{
+											"key": "fontColor",
+											"value": "%23fff"
+										},
+										{
+											"key": "fontBackground",
+											"value": "none"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get cat by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.response.to.have.responseTime.lessThan(30000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "image/*"
+									}
+								],
+								"url": {
+									"raw": "https://cataas.com/cat/33",
+									"protocol": "https",
+									"host": [
+										"cataas",
+										"com"
+									],
+									"path": [
+										"cat",
+										"33"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Will return all cats",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Will return a random cat with a :tag, You can combine multiple tags with :tag separator",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is image/jpeg\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\", \"image/jpeg\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://cataas.com/cat/:tag",
+									"protocol": "https",
+									"host": [
+										"cataas",
+										"com"
+									],
+									"path": [
+										"cat",
+										":tag"
+									],
+									"variable": [
+										{
+											"key": "tag",
+											"value": "33"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get random cat saying text",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Check if the status code is 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is image/jpeg\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\", \"image/jpeg\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"// Check if the response body is not empty\r",
+											"pm.test(\"Response body is not empty\", function () {\r",
+											"    pm.response.to.have.body();\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "image/*"
+									}
+								],
+								"url": {
+									"raw": "https://cataas.com/cat/says/hi?position=center&font=Impact&fontSize=80&fontColor=%23ff&fontBackground=Bue",
+									"protocol": "https",
+									"host": [
+										"cataas",
+										"com"
+									],
+									"path": [
+										"cat",
+										"says",
+										"hi"
+									],
+									"query": [
+										{
+											"key": "position",
+											"value": "center"
+										},
+										{
+											"key": "font",
+											"value": "Impact"
+										},
+										{
+											"key": "fontSize",
+											"value": "80"
+										},
+										{
+											"key": "fontColor",
+											"value": "%23ff"
+										},
+										{
+											"key": "fontBackground",
+											"value": "Bue"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Will return a random cat",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://cataas.com/cat",
+									"protocol": "https",
+									"host": [
+										"cataas",
+										"com"
+									],
+									"path": [
+										"cat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get cat by id saying text",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.response.to.have.responseTime.lessThan(30000);\r",
+											"});\r",
+											"// Check if the status code is 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is image/jpeg\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\", \"image/jpeg\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"// Check if the response body is not empty\r",
+											"pm.test(\"Response body is not empty\", function () {\r",
+											"    pm.response.to.have.body();\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response size is below 100 KB\", function () {\r",
+											"    pm.expect(pm.response.responseSize).to.be.below(100000); // 100 KB = 100,000 bytes\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "image/*"
+									}
+								],
+								"url": {
+									"raw": "https://cataas.com/cat/33/says/44?position=center&font=Impact&fontSize=50&fontColor=%23fff&fontBackground=none",
+									"protocol": "https",
+									"host": [
+										"cataas",
+										"com"
+									],
+									"path": [
+										"cat",
+										"33",
+										"says",
+										"44"
+									],
+									"query": [
+										{
+											"key": "position",
+											"value": "center"
+										},
+										{
+											"key": "font",
+											"value": "Impact"
+										},
+										{
+											"key": "fontSize",
+											"value": "50"
+										},
+										{
+											"key": "fontColor",
+											"value": "%23fff"
+										},
+										{
+											"key": "fontBackground",
+											"value": "none"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": ":text: Replace this with the text that you want the cat to \"say\" in the speech bubble. fontSize=:size: Specify the font size of the text. For example, fontSize=20 will make the text 20px in size. fontColor=:color: Specify the color of the text. For exampl",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat/says/hello?fontSize=50&fontColor=white",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat",
+										"says",
+										"hello"
+									],
+									"query": [
+										{
+											"key": "fontSize",
+											"value": "50"
+										},
+										{
+											"key": "fontColor",
+											"value": "white"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Adavance",
+					"item": [
+						{
+							"name": "Will return a random cat with image :type (xsmall, small, medium or square)",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "400 bad request .Will return a random cat with image :type (xsmall, small, medium or square)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?type=sqaure",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "sqaure"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Will return a random cat with image filtered by :filter (blur, mono, negate or custom)",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "400 bad request .Will return a random cat with image filtered by :filter (blur, mono, negate or custom) Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?filter=mona",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "mona"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Will return a random cat with image filtered by :brightness, :lightness, :saturation and :hue",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?filter=mona",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "mona"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 bad request .Will return a random cat with image filtered by :brightness, :lightness, :saturation and :hue Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?filter=mona",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "mona"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 Bad Request .Will return a random cat with image filtered by :red, :green and :blue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?filter=custom&r=:red",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "custom"
+										},
+										{
+											"key": "r",
+											"value": ":red"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Will return a random cat with image filtered by :red, :green and :blue Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?filter=custom&r=:red&g=:green&b=:blue",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "custom"
+										},
+										{
+											"key": "r",
+											"value": ":red"
+										},
+										{
+											"key": "g",
+											"value": ":green"
+										},
+										{
+											"key": "b",
+											"value": ":blue"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 Bad Request Will return a random cat with :width or :height",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?width=:width ",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "width",
+											"value": ":width "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Will return a random cat with :width",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?width=500",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "width",
+											"value": "500"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Returns a random cat image with a height of 500px",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat?height=1000",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat"
+									],
+									"query": [
+										{
+											"key": "height",
+											"value": "1000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(Returns a random cat image with both width and height set to 500px)",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "400 Bad Request .(Returns a random cat image with both width and height set to 500px) Copy",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Facebook embedded render Will return a random cat in a HTML page,",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Twitter Will return a random cat in a HTML page, usefull for or Facebook embedded render",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "404 Not Found .Requested resource could not be found. Twitter Will return a random cat in a HTML page, usefull for or Facebook embedded render",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Will return a random cat in a JSON object",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Will return a random cat in a JSON object",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});s"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://www.facebook.com/cat?json=true",
+									"protocol": "https",
+									"host": [
+										"www",
+										"facebook",
+										"com"
+									],
+									"path": [
+										"",
+										"cat"
+									],
+									"query": [
+										{
+											"key": "json",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/cat/gif/: This indicates you're requesting a random cat gif. says/Hello: This will add text (in this case, the word \"Hello\") on the image or gif. filter=mono: This applies a monochrome (black and white) filter to the image or gif. fontColor=orange: This",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/cat/gif/says/Fuck?filter=mono&fontColor=blue&fontSize=100&type=square",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"cat",
+										"gif",
+										"says",
+										"Fuck"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "mono"
+										},
+										{
+											"key": "fontColor",
+											"value": "blue"
+										},
+										{
+											"key": "fontSize",
+											"value": "100"
+										},
+										{
+											"key": "type",
+											"value": "square"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get JSON data",
+					"item": [
+						{
+							"name": "/api/cats?tags=tag1,tag2&skip=0&limit=10 This endpoint will return a list of cat images based on certain filters and limits:  tags=tag1,tag2: This parameter filters the images by specific tags. You can replace tag1 and tag2 with actual tags that match the",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/api/cats?tags=Baby,Bengal,Bester&skip=0&limit=10",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"api",
+										"cats"
+									],
+									"query": [
+										{
+											"key": "tags",
+											"value": "Baby,Bengal,Bester"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/tags This endpoint returns all available tags that you can use to filter cat images. It is useful if you're not sure what tags exist or if you want to explore available categories.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cataas}}/api/tags",
+									"host": [
+										"{{cataas}}"
+									],
+									"path": [
+										"api",
+										"tags"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "trace.moe API",
+			"item": [
+				{
+					"name": "Part 1",
+					"item": [
+						{
+							"name": "Search by image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search?url=https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "url",
+											"value": "https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Image format not correct showing the expect the 404 Not Found Requested resource could not be found.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search?url=https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpng",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "url",
+											"value": "https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpng"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "This method is the easiest if your image is already hosted somewhere in public. Otherwise, you must upload the image.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search?url=https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "url",
+											"value": "https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "This method is the easiest if your image is already hosted somewhere in public. Otherwise, you must upload the image. . Public URL sending the url",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search?url=https://picsum.photos/200",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "url",
+											"value": "https://picsum.photos/200"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search by image URL 401 Unauthorized The request is unauthenticated.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Content-Type is application/json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\", \"application/json; charset=utf-8\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search?url=https://www.adoptapet.com/public/apis/pet_list.html",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "url",
+											"value": "https://www.adoptapet.com/public/apis/pet_list.html"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search by image URL 400 Bad Request The server could not understand the request. Maybe a bad syntax?",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search?url=\"https://api.trace.moe/image/142838/%5BOhys-Raws%5D%20Spy%20x%20Family%202nd%20-%2001%20(TX%201280x720%20x264%20AAC).mp4.jpg?t=680.5%26now=1738926000%26token=eIJEoonxhAfuzAnL5r5By7J3BV8\"",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "url",
+											"value": "\"https://api.trace.moe/image/142838/%5BOhys-Raws%5D%20Spy%20x%20Family%202nd%20-%2001%20(TX%201280x720%20x264%20AAC).mp4.jpg?t=680.5%26now=1738926000%26token=eIJEoonxhAfuzAnL5r5By7J3BV8\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search by image upload : File size is limited to 25MB. The server would throw HTTP 413 Payload Too Large if it is too large. Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Type",
+											"type": "file",
+											"src": "/C:/Users/xmedia/Downloads/anya_forger_by_slimshadywallpaper_dhvl6um-fullview.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search by image upload : File size is limited to 25MB. The server would throw HTTP 413 Payload Too Large if it is too large. Copy 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "/C:/Users/xmedia/Downloads/thumb-1920-1333611.jpeg"
+									}
+								},
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search by image upload : multiple file video files upload will be 200 ok message .",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Type",
+											"type": "file",
+											"src": [
+												"/C:/Users/xmedia/Videos/HR Question count is wrong.mp4",
+												"/C:/Users/xmedia/Videos/HR Round Full Video.mp4",
+												"/C:/Users/xmedia/Videos/Repeated Questions (HR) Round.mp4",
+												"/C:/Users/xmedia/Videos/Repeated questions.mp4",
+												"/C:/Users/xmedia/Videos/same interview page open.mp4",
+												"/C:/Users/xmedia/Videos/Tech and HR Scenario (Tech round full video).mp4"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search by image upload : File size is limited to 25MB. The server would throw HTTP 413 Payload Too Large if it is too large. Copy 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "/C:/Users/xmedia/Downloads/thumb-1920-1333611.jpeg"
+									}
+								},
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500 Internal Server Error The server has encountered a situation it does not know how to handle . Error is MulterError: File too large",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Type",
+											"type": "file",
+											"src": "/C:/Users/xmedia/Desktop/Book/odoo/Learn-Odoo (1).pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "This is body content not request not working .405 Method Not Allowed Use of the request method is not allowed on the resource .",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 405\", function () {\r",
+											"    pm.response.to.have.status(405);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "@demo.jpg",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search by FORM POST (multipart/form-data)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "demo.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search by FORM POST (multipart/form-data) Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "demo.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Part 2",
+					"item": [
+						{
+							"name": "Cut Black Borders trace.moe can detect black borders automatically and cut away unnecessary parts of the images that would affect search results accuracy. This is useful if your image is a screencap from a smartphone or iPad that contains black bars.  To",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search?cutBorders&url=https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "cutBorders",
+											"value": null
+										},
+										{
+											"key": "url",
+											"value": "https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filter by Anilist ID You can search for a matching scene only in a particular anime by Anilist ID. This is useful when you are certain about the anime name but cannot remember which episode.  First you have to look for the Anilist ID of your anime from An",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search?anilistID=21034&url=https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "anilistID",
+											"value": "21034"
+										},
+										{
+											"key": "url",
+											"value": "https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload the Image:  Go to the Body tab in Postman. Select form-data. Under Key, enter file. This is the key expected by the API to upload the image. In the value section, click Select Files and choose the image file you want to upload. This could be a .jpg",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/search",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Include Anilist info Asking for Anilist info would slow down your request because it takes additional query to Anilist, and may fail depending on their availability.  Only ask for it when you need nothing more than idMal, title, synonyms, isAdult from Ani",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Media Preview The url you obtained from image and video from search result would expire in 300 seconds (5 minutes)  It can generate image or video preview of 3 sizes by appending size=l (large), size=m (medium, default) or size=s (small) at the end of the",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/image/xxx/xxxxxx.mp4.jpg?t=0&now=1653892514&token=xxxxx&size=s",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"image",
+										"xxx",
+										"xxxxxx.mp4.jpg"
+									],
+									"query": [
+										{
+											"key": "t",
+											"value": "0"
+										},
+										{
+											"key": "now",
+											"value": "1653892514"
+										},
+										{
+											"key": "token",
+											"value": "xxxxx"
+										},
+										{
+											"key": "size",
+											"value": "s"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Media Preview The url you obtained from image and video from search result would expire in 300 seconds (5 minutes)  It can generate image or video preview of 3 sizes by appending size=l (large), size=m (medium, default) or size=s (small) at the end of the",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/image/xxx/xxxxxx.mp4.jpg?t=0&now=1653892514&token=xxxxx&size=s",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"image",
+										"xxx",
+										"xxxxxx.mp4.jpg"
+									],
+									"query": [
+										{
+											"key": "t",
+											"value": "0"
+										},
+										{
+											"key": "now",
+											"value": "1653892514"
+										},
+										{
+											"key": "token",
+											"value": "xxxxx"
+										},
+										{
+											"key": "size",
+											"value": "s"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "For video preview, it can generate a video with sound (default), or a muted video by appending mute to the end of url. e.g.",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/video/xxx/xxxxxx.mp4?t=0&now=1653892514&token=xxxxx&mute",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"video",
+										"xxx",
+										"xxxxxx.mp4"
+									],
+									"query": [
+										{
+											"key": "t",
+											"value": "0"
+										},
+										{
+											"key": "now",
+											"value": "1653892514"
+										},
+										{
+											"key": "token",
+											"value": "xxxxx"
+										},
+										{
+											"key": "mute",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "For video preview, it can generate a video with sound (default), or a muted video by appending mute to the end of url. e.g. Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/video/xxx/xxxxxx.mp4?t=0&now=1653892514&token=xxxxx&size=s&mute",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"video",
+										"xxx",
+										"xxxxxx.mp4"
+									],
+									"query": [
+										{
+											"key": "t",
+											"value": "0"
+										},
+										{
+											"key": "now",
+											"value": "1653892514"
+										},
+										{
+											"key": "token",
+											"value": "xxxxx"
+										},
+										{
+											"key": "size",
+											"value": "s"
+										},
+										{
+											"key": "mute",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/me Let you check the search quota and limit for your account (with API key) or IP address (without API key).",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trace.moe/video/xxx/xxxxxx.mp4?t=0&now=1653892014&token=xxxxx&size=s&mute",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trace",
+										"moe"
+									],
+									"path": [
+										"video",
+										"xxx",
+										"xxxxxx.mp4"
+									],
+									"query": [
+										{
+											"key": "t",
+											"value": "0"
+										},
+										{
+											"key": "now",
+											"value": "1653892014"
+										},
+										{
+											"key": "token",
+											"value": "xxxxx"
+										},
+										{
+											"key": "size",
+											"value": "s"
+										},
+										{
+											"key": "mute",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Using the API with API Keys If you have an API Key that grants you more search quota and limits, put your API key in either HTTP header x-trace-key or query string key.  When searching with API Keys, it would count towards your account quota and limits. W",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Using API Keys in query string If you're lazy and don't mind your API Key being exposed to browser history or logs. Just put your key in key in query string",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "URLhaus API Documentation",
+			"item": [
+				{
+					"name": "Obtain an Auth-Key (Required) : Whenever you interact with the URLhaus API, you must include the HTTP header Auth-Key\" with your Auth-Key. Example curl command:",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Query To retrieve a list of recent URLs (recent additions made to URLhaus), you must send a HTTP GET request to URLhaus as documented below. Please note that the API will return a list of recent additions made in the past 3 days, but will return maximal 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/urls/recent/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"urls",
+								"recent",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "You can produce such a request with the following wget command:",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/urls/recent/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"urls",
+								"recent",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "there is an additional (optional) parameter limit that you can use to limit the amount of results to a custom value (max 1000). The following wget will return the 3 most recent results:",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Each URL object contains an 'id' and 'Url'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    jsonData.urls.forEach(function(urlObj) {\r",
+									"        pm.expect(urlObj.id).to.exist;  // Check that each 'id' exists\r",
+									"        pm.expect(urlObj.url).to.exist;\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/urls/recent/limit/3/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"urls",
+								"recent",
+								"limit",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "there is an additional (optional) parameter limit that you can use to limit the amount of results to a custom value (max 1000). The following wget will return the 3 most recent results: Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Each URL object contains an 'id' and 'Url'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    jsonData.urls.forEach(function(urlObj) {\r",
+									"        pm.expect(urlObj.id).to.exist;  // Check that each 'id' exists\r",
+									"        pm.expect(urlObj.url).to.exist;\r",
+									"    });\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/urls/recent/limit/10001/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"urls",
+								"recent",
+								"limit",
+								"10001",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query recent payloads Query To retrieve a list of recent payloads (recent payloads seen by URLhaus), you must send a HTTP GET request to URLhaus as documented below. Please note that the API will return a list of recent payloads from the past 3 days, but ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Each URL object contains an 'id' and 'Url'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    jsonData.urls.forEach(function(urlObj) {\r",
+									"        pm.expect(urlObj.id).to.exist;  // Check that each 'id' exists\r",
+									"        pm.expect(urlObj.url).to.exist;\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/payloads/recent/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"payloads",
+								"recent",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "there is an additional (optional) parameter limit that you can use to limit the amount of results to a custom value (max 1000). The following wget will return the 3 most recent results:",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check if each payload contains md5_hash, sha256_hash, file_type, and virustotal link\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    jsonData.payloads.forEach(function(payload) {\r",
+									"        // Check if 'md5_hash' exists\r",
+									"        pm.expect(payload.md5_hash).to.exist;\r",
+									"\r",
+									"        // Check if 'sha256_hash' exists\r",
+									"        pm.expect(payload.sha256_hash).to.exist;\r",
+									"\r",
+									"        // Check if 'file_type' exists\r",
+									"        pm.expect(payload.file_type).to.exist;\r",
+									"\r",
+									"        // Check if 'virustotal' has a link and it's a valid URL\r",
+									"        pm.expect(payload.virustotal).to.have.property(\"link\").that.is.a(\"string\").and.contains(\"virustotal.com\");\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/payloads/recent/limit/3/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"payloads",
+								"recent",
+								"limit",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query URL information Query To retrieve information about an URL, you must send a HTTP POST request to URLhaus as documented below.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/url/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"url",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Note that if you have the ID of an URL tracked by URLhaus, you can query the API by using that ID instead of the URL:  https://urlhaus-api.abuse.ch/v1/urlid/",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/urlid/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"urlid",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query host information Query To retrieve information about a host, you must send a HTTP POST request to URLhaus as documented below.  https://urlhaus-api.abuse.ch/v1/host/",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth-Key",
+								"value": "YOUR-AUTH-KEY-HERE"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "host",
+									"value": "vektorex.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/host/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"host",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query host information Query To retrieve information about a host, you must send a HTTP POST request to URLhaus as documented below.  https://urlhaus-api.abuse.ch/v1/host/ Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth-Key",
+								"value": "YOUR-AUTH-KEY-HERE"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "md5_hash",
+									"value": "12c8aec5766ac3e6f26f2505e2f4a8f2",
+									"type": "text"
+								},
+								{
+									"key": "sha256_hash",
+									"value": "12c8aec5766ac3e6f26f2505e2f4a8f2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/payload/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"payload",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query tag information Query To retrieve information about a tag, you must send a HTTP POST request to URLhaus as documented below.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth-Key",
+								"value": "YOUR-AUTH-KEY-HERE"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "md5_hash",
+									"value": "12c8aec5766ac3e6f26f2505e2f4a8f2",
+									"type": "text"
+								},
+								{
+									"key": "sha256_hash",
+									"value": "12c8aec5766ac3e6f26f2505e2f4a8f2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/tag/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"tag",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query signature information Query URLhaus tries to identify the malware family of a payload (malware sample) served by malware URLs. Unlink tags, the signature is something that the reporter of the malware URL can not influence. To retrieve information ab",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth-Key",
+								"value": "YOUR-AUTH-KEY-HERE"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "signature",
+									"value": "Gozi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/signature/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"signature",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download malware sample Query You can get a copy of a certain payload (malware sample) that URLhaus has retrieved from a malware URL as documented below",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth-Key",
+								"value": "YOUR-AUTH-KEY-HERE"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "signature",
+									"value": "Gozi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://urlhaus-api.abuse.ch/v1/signature/",
+							"protocol": "https",
+							"host": [
+								"urlhaus-api",
+								"abuse",
+								"ch"
+							],
+							"path": [
+								"v1",
+								"signature",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "StartFragmentBeside the APIs documented on [URLhaus](https://urlhaus.abuse.ch/api/) that serves various feeds and lists, abuse.ch also offers a dedicated API that allows to gather information on a specific URL, file hash or tag from URLhaus through an automated way. It is also possible to retrieve a payload (malware sample) URLhaus has collected from malware URLs it tracks. The API is documented below.EndFragment"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "cataas",
+			"value": "https://cataas.com",
+			"type": "string"
+		}
+	]
+}
